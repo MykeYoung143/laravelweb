@@ -59,7 +59,7 @@
       </div>
       <div class="mb-3">
         <label for="body" class="form-label">Body</label>
-        <textarea class="form-control" id="body" name="body">{{ old('body') }}</textarea>
+        <textarea class="form-control" id="body" name="body" >{{ old('body', $post->body) }}</textarea>
         @error('body')
           <p class="text-danger">{{ $message }}</p>
         @enderror
