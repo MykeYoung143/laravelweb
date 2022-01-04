@@ -18,13 +18,18 @@
     <!-- Custom styles for this template -->
     <link href="/css/dashboard.css" rel="stylesheet">
 
-    <!-- Trix Editor -->
+    <!-- Trix Editor  //kalau mau memakai trix editor
     <link rel="stylesheet" type="text/css" href="/css/trix.css">
     <script type="text/javascript" src="/javascript/trix.js"></script>
 
     <style>
       trix-toolbar [data-trix-button-group="file-tools"]{
         display:none;
+      }
+    </style> -->
+    <style>
+      .ck-editor__editable_inline {
+          min-height: 100px;
       }
     </style>
   </head>

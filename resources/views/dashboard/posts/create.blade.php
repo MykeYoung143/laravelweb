@@ -6,7 +6,7 @@
 </div>
 
 <div class="col-lg-8">
-    <form method="post" action="/dashboard/posts" class="mb-5">
+    <form method="post" action="/dashboard/posts" class="mb-5" enctype="multipart/form-data">
       @csrf
       <div class="mb-3">
         <label for="title" class="form-label">Title</label>
@@ -41,16 +41,35 @@
         </select>
       </div>
       <div class="mb-3">
+        <label for="image" class="form-label">Choose Image</label>
+        <img class="img-preview img-fluid mb-3 col-sm-5">
+        <input class="form-control @error('image') is-invalid @enderror" type="file" id="image" name="image" onchange="previewImage()">
+        @error('image')
+        <div class="invalid-feedback">
+          {{ $message }}
+        </div>
+        @enderror
+      </div>
+      <div class="mb-3 ck-editor__editable ck-editor__editable_inline">
         <label for="body" class="form-label">Body</label>
+        <textarea class="form-control" id="body" name="body" rows="10" cold="50">{{ old('body') }}</textarea>
         @error('body')
           <p class="text-danger">{{ $message }}</p>
         @enderror
-        <input id="body" type="hidden" name="body" value="{{ old('body') }}">
-        <trix-editor input="body"></trix-editor>
+        <!-- <input id="body" type="hidden" name="body" value="{{ old('body') }}">
+        <trix-editor input="body"></trix-editor> -->
       </div>
       <button type="submit" class="btn btn-primary">Create Post</button>
     </form>
 </div>
+<script src={{ asset('ckeditor/ckeditor.js') }}></script>
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#body' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+</script>
 
 <script>
     const title = document.querySelector('#title');
@@ -66,5 +85,19 @@
     document.addEventListener('trix-file-accept', function(e) {
       e.preventDefault();
     })
+
+    function previewImage(){
+      const image = document.querySelector('#image');
+      const imgPreview = document.querySelector('.img-preview');
+
+      imgPreview.style.display = 'block';
+
+      const oFReader = new FileReader();
+      oFReader.readAsDataURL(image.files[0]);
+
+      oFReader.onload = function(oFREvent){
+        imgPreview.src = oFREvent.target.result;
+      } 
+    }
 </script>
 @endsection
