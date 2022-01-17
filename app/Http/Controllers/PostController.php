@@ -39,5 +39,11 @@ class PostController extends Controller
             "active" => 'posts',
             "post" => $post
         ]);
+
+        return view('categories', [
+            'title' => 'Post Categories',
+            "active" => 'categories',
+            'categories' => Category::all()
+        ]);
     }
 }

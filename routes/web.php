@@ -22,26 +22,36 @@ use App\Http\Controllers\DashboardPostController;
 |
 */
 
-Route::get('/', function () {
-    return view('home', [
+Route::get('/', [PostController::class, 'index'], function () {
+    return view('posts', [
         "title" => "Home",
-        "active" => 'home'
+        "active" => 'home',
+        'categories' => Category::all()
     ]);
+    return view('categories')->with('categories' , $categories);
 });
 
 Route::get('/about', function () {
     return view('about', [
         "title" => "About",
-        "active" => 'about',
-        "name" => "Michael Alex",
-        "email" => "michaelalex997@gmail.com",
-        "image" => "shiba.jpg"
+        "active" => 'about'
     ]);
 });
 
+Route::get ('/shop', function(){
+    return view('shop', [
+        "title" => "Shop",
+        "active" => 'shop'
+    ]);
+});
 
-
-Route::get('/posts', [PostController::class, 'index']);
+Route::get('/posts', [PostController::class, 'index'], function () {
+    return view('posts', [
+        "title" => "Home",
+        "active" => 'home',
+    ]);
+    return view('categories')->with('categories' , $categories);
+});
 
 // halaman single post
 Route::get('posts/{post:slug}', [PostController::class, 'show']);

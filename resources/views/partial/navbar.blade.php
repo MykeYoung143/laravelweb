@@ -1,37 +1,44 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container">
-    <a class="navbar-brand" href="/">Trial Blog</a>
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/"><img src="img/Starter/Logo-Navi.svg" alt=""></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+      <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link {{ ($active === "home") ? 'active' : '' }}"  href="/">Home</a>
+          <a class="nav-link {{ ($active === "home") ? 'active' : '' }}" aria-current="page" href="/posts">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {{ ($active === "shop") ? 'active' : '' }}" href="/shop">Shop</a>
         </li>
         <li class="nav-item">
           <a class="nav-link {{ ($active === "about") ? 'active' : '' }}" href="/about">About</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link {{ ($active === "posts") ? 'active' : '' }}" href="/posts">Blog</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link {{ ($active === "categories") ? 'active' : '' }}" href="/categories">Categories</a>
-        </li>
-       <!-- <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li> -->
       </ul>
-
-      <ul class="navbar-nav ms-auto">
+          <!-- @if (request('category'))
+            <input type="hidden" name="category" value="{{ request('category') }}">
+          @endif
+          @if (request('author'))
+            <input type="hidden" name="author" value="{{ request('author') }}">
+          @endif
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Search.." name="search" value="{{ request('search') }}">
+                <button class="btn btn-outline-primary" type="submit">Search</button>
+            </div> -->
+      <form action="/posts" class="search d-flex">
+        @if (request('category'))
+          <input type="hidden" name="category" value="{{ request('category') }}">
+        @endif
+        @if (request('author'))
+          <input type="hidden" name="author" value="{{ request('author') }}">
+        @endif
+          <div class="input-group mb-3">
+              <input type="text" aria-label="Search" class="form-control me-2" placeholder="Search.." name="search" value="{{ request('search') }}">
+              <button class="btn" type="submit"><i style="color: #F15A2D;" class="fas fa-search"></i></button>
+          </div>
+      </form>
+        <ul class="navbar-nav ms-auto">
           @auth
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -51,13 +58,14 @@
               </ul>
             </li>
           @else
-            <li class="nav-item">
-            <a href="/login" class="nav-link {{ ($active === "login") ? 'active' : '' }}"><i class="bi bi-box-arrow-in-right"></i>
-            Login</a>
-          </li>
+            <div class="profile">
+        <div class="profile-image">
+          <a href="/login" class="nav-link {{ ($active === "login") ? 'active' : '' }}" style="border: none"><img src="img/Blog/Icon-navigasi.svg" alt=""></a>
+        </div>
           @endauth
         </ul>
       </form>
+      </div>
     </div>
   </div>
 </nav>

@@ -50,9 +50,19 @@
         </div>
         @enderror
       </div>
-      <div class="mb-3 ck-editor__editable ck-editor__editable_inline">
+      <div class="mb-3">
+        <label for="links" class="form-label">Enter Links(For previewable media, Youtube and Vimeo)</label>
+        <input type="text" class="form-control @error('links') is-invalid @enderror" id="links" name="links" autofocus
+        value="{{ old('links') }}">
+        @error('links')
+        <div class="invalid-feedback">
+          {{ $message }}
+        </div>
+        @enderror
+        </div>
+      <div class="mb-3">
         <label for="body" class="form-label">Body</label>
-        <textarea class="form-control" id="body" name="body" rows="10" cold="50">{{ old('body') }}</textarea>
+        <textarea class="form-control" id="body" name="body" rows="10" col="50">{{ old('body') }}</textarea>
         @error('body')
           <p class="text-danger">{{ $message }}</p>
         @enderror
@@ -65,12 +75,11 @@
 <script src={{ asset('ckeditor/ckeditor.js') }}></script>
 <script>
     ClassicEditor
-        .create( document.querySelector( '#body' ) )
+        .create( document.querySelector( '#body' ), )
         .catch( error => {
             console.error( error );
         } );
 </script>
-
 <script>
     const title = document.querySelector('#title');
     const slug = document.querySelector('#slug');
@@ -82,9 +91,9 @@
     });
 
 
-    document.addEventListener('trix-file-accept', function(e) {
-      e.preventDefault();
-    })
+    // document.addEventListener('trix-file-accept', function(e) {
+    //   e.preventDefault();
+    // })
 
     function previewImage(){
       const image = document.querySelector('#image');

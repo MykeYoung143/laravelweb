@@ -52,6 +52,7 @@ class DashboardPostController extends Controller
             'slug' => 'required|unique:posts',
             'category_id' => 'required',
             'image' => 'image|file|max:5120',
+            'links' => 'max:191',
             'body' => 'required'
         ]);
 
@@ -60,7 +61,7 @@ class DashboardPostController extends Controller
         }
 
         $validatedData['user_id'] = auth()->user()->id;
-        $validatedDatap['excerpt'] = str::limit(strip_tags($request->body), 200, '...');
+        $validatedData['excerpt'] = Str::limit(strip_tags($request->body), 200, '...');
 
         Post::create($validatedData);
 
@@ -107,6 +108,7 @@ class DashboardPostController extends Controller
             'title' => 'required|max:191',
             'category_id' => 'required',
             'image' => 'image|file|max:5120',
+            'links' => 'max:191',
             'body' => 'required'
         ];
 
@@ -124,7 +126,7 @@ class DashboardPostController extends Controller
         }
 
         $validatedData['user_id'] = auth()->user()->id;
-        $validatedDatap['excerpt'] = str::limit(strip_tags($request->body), 200, '...');
+        $validatedData['excerpt'] = Str::limit(strip_tags($request->body), 200, '...');
 
         Post::where('id', $post->id)
             ->update($validatedData);
