@@ -3,7 +3,7 @@
 @section('container')
 <!-- <h1 class="mb-3 text-center">{{ $title }}</h1> -->
 <div class="col-lg-2 offset-lg-1">
-        <img src="Img/Blog/Features.png" alt=""><strong> Featured</strong>
+        <img src="/Img/Blog/Features.png" alt=""><strong> Featured</strong>
 </div>
 <div class="slider">
       <ul id="autoWidth" class="cs-hidden">
@@ -100,9 +100,11 @@
       <h1>Topic</h1>
     </div>
     <div class="categories">
-      <a href="/posts?category=web-design" class="btn category" data-aos="zoom-in">Web Design</a>
-      <a href="/posts?category=web-programming" class="btn category" data-aos="zoom-in">Web programming</a>
-      <a href="/posts?category=personal" class="btn category" data-aos="zoom-in">Personal</a>
+      <a href="/posts?category=covid-19" class="btn category" data-aos="zoom-in">Covid 19</a>
+      <a href="/posts?category=corona" class="btn category" data-aos="zoom-in">Corona</a>
+      <a href="/posts?category=virus" class="btn category" data-aos="zoom-in">Virus</a>
+      <a href="/posts?category=kesehatan" class="btn category" data-aos="zoom-in">Kesehatan</a>
+      <a href="/posts?category=pets" class="btn category" data-aos="zoom-in">Pets</a>
       <!-- <a href="#" class="btn category" data-aos="zoom-in" data-aos-delay="200">Technology</a>
       <a href="#" class="btn category" data-aos="zoom-in" data-aos-delay="400">Pet</a>
       <a href="#" class="btn category" data-aos="zoom-in" data-aos-delay="600">Hotel</a>

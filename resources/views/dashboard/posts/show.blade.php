@@ -46,10 +46,10 @@
             </div>
         </div>
     </div>
-<script charset="utf-8" src="//cdn.iframe.ly/embed.js?api_key=2f8cdcfd13060132051d62"></script>
+<!-- <script charset="utf-8" src="//cdn.iframe.ly/embed.js?api_key=2f8cdcfd13060132051d62"></script>
 <script>
     document.querySelectorAll( 'oembed[url]' ).forEach( element => {
         iframely.load( element, element.attributes.url.value );
     } );
-</script>
+</script> -->
 @endsection

@@ -13,11 +13,11 @@
                 @if ($post->image)
                     <div style="max-height: 400px; overflow:hidden;">
                         <img src="{{ asset('storage/' . $post->image) }}"
-                        alt="{{ $post->category->name }}" class="img-fluid">
+                        alt="{{ $post->category->name }}" class="img-fluid mt-3">
                     </div>
                 @else
                     <img src="https://source.unsplash.com/1200x400? {{ $post->category->name }}" 
-                    class="card-img-top" alt="{{ $post->category->name }}">
+                    class="card-img-top mt-3" alt="{{ $post->category->name }}">
                 @endif
 
                 <article class="my-3 fs-5">
