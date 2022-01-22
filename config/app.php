@@ -174,6 +174,10 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        /*
+         * social media share package
+         */
+        Jorenvh\Share\Providers\ShareServiceProvider::class,
 
     ],
 
@@ -189,7 +193,7 @@ return [
     */
 
     'aliases' => [
-
+        'Share' => Jorenvh\Share\ShareFacade::class,
         'App' => Illuminate\Support\Facades\App::class,
         'Arr' => Illuminate\Support\Arr::class,
         'Artisan' => Illuminate\Support\Facades\Artisan::class,

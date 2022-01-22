@@ -60,7 +60,7 @@
           @else
             <div class="profile">
         <div class="profile-image">
-          <a href="/login" class="nav-link {{ ($active === "login") ? 'active' : '' }}" style="border: none"><img src="img/Blog/Icon-navigasi.svg" alt=""></a>
+          <a href="/login" class="nav-link {{ ($active === "login") ? 'active' : '' }}" style="border: none"><img src="/img/Blog/Icon-navigasi.svg" alt=""></a>
         </div>
           @endauth
         </ul>

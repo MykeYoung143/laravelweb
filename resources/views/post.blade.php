@@ -8,8 +8,17 @@
 
                 <p>By. <a href="/posts?author={{ $post->author->username }}" class="text-decoration-none">{{ $post->author->name }} </a> in <a href="/posts?category={{ $post->category->slug }}" class="text-decoration-none">
                 {{ $post->category->name }}</a></p>
-                <a href="/posts" class="btn btn-success"><span data-feather="arrow-left"></span> Back to Home</a>
+                <p>MiaraO.com - {{ $post->created_at }}</p>
+                <!-- <a href="/posts" class="btn btn-success"><span data-feather="arrow-left"></span> Back to Home</a> -->
                 
+                <div class="socials">
+                    <span class="social-text">Bagikan :</span>
+                    <div class="social-box">
+                    @foreach($shareComponent as $key => $value)
+                    <div class="social"><a href="{{$value}}" target="_blank" class="btn"><img src="/img/{{$key}}.svg"></a></div>
+                    @endforeach
+                    </div>
+                </div>
                 @if ($post->image)
                     <div style="max-height: 400px; overflow:hidden;">
                         <img src="{{ asset('storage/' . $post->image) }}"
@@ -42,11 +51,13 @@
             </div>
         </div>
     </div>
+
+    <!-- script iframely untuk media embed otomatis, tetapi tidak digunakan
 <script charset="utf-8" src="//cdn.iframe.ly/embed.js?api_key=2f8cdcfd13060132051d62"></script>
 <script>
     document.querySelectorAll( 'oembed[url]' ).forEach( element => {
         iframely.load( element, element.attributes.url.value );
     } );
-</script>
+</script> -->
 
 @endsection

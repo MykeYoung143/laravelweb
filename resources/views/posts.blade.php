@@ -50,7 +50,7 @@
   <div class="row">
     <div class="col-lg-8 col-md-12">
       <div class="title" data-aos="fade-down">
-        <img src="img/Starter/Lounge.svg" alt="">
+        <img src="/img/Starter/Lounge.svg" alt="">
           <h1>Lounge</h1>
       </div>
       @if ($posts->count())
@@ -80,7 +80,7 @@
 
               <div class="icon-text">
                 <span class="icon"><i class="fas fa-calendar-alt"></i></span>
-                <span class="text">{{ $post->created_at->diffForHumans() }}</span>
+                <span class="text">{{ $post->created_at}}</span>
               </div>
 
               <div class="blog-action">

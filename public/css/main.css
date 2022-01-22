@@ -248,6 +248,40 @@ a.tags {
   color: #2D3F50;
 }
 
+.social-text{
+  padding: 11px 0 0;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 17px;
+  color: var(--cl-main);
+  display: inline-block;
+  vertical-align: top;
+}
+
+.social-box{
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+.social{
+  display: inline-block;
+  padding: 0 2px;
+  vertical-align: top;
+}
+ .social img{
+  width: 30px;
+  height: 30px;
+}
+/* .socialtelegram{
+  display: inline-block;
+  padding: 0 2px;
+  vertical-align: top;
+}
+.socialwhatsapp{
+  display: inline-block;
+  padding: 0 2px;
+  vertical-align: top;
+} */
 .blog-details, .icon-text {
   display: -webkit-box;
   display: -ms-flexbox;

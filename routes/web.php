@@ -9,6 +9,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardPostController;
+use App\Http\Controllers\SocialShareButtonsController;
 
 
 /*
@@ -54,7 +55,7 @@ Route::get('/posts', [PostController::class, 'index'], function () {
 });
 
 // halaman single post
-Route::get('posts/{post:slug}', [PostController::class, 'show']);
+Route::get('posts/{post:slug}', [PostController::class, 'show', 'ShareWidget']);
 
 Route::get('/categories', function(){
     return view('categories', [
@@ -81,6 +82,9 @@ Route::get('/dashboard', function() {
 Route::get('/dashboard/posts/checkSlug', [DashboardPostController::Class, 'checkSlug'])->middleware('auth');
 
 Route::resource('/dashboard/posts', DashboardPostController::Class)->middleware('auth');
+
+// Social media share
+Route::get('/social-media-share', [SocialShareButtonsController::class,'ShareWidget']);
 
 /*  //tidak dipakai lagi, sudah ditangani query
 Route::get('/categories/{category:slug}', function(Category $category) {
