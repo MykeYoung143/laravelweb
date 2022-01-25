@@ -1,7 +1,7 @@
 (function ($, undefined) {
     'use strict';
     var defaults = {
-        item: 3,
+        item: 1,
         autoWidth: false,
         slideMove: 1,
         slideMargin: 10,
@@ -11,11 +11,11 @@
         cssEasing: 'ease', //'cubic-bezier(0.25, 0, 0.25, 1)',
         easing: 'linear', //'for jquery animation',//
         speed: 400, //ms'
-        auto: false,
+        auto: true,
         pauseOnHover: false,
         loop: false,
         slideEndAnimation: true,
-        pause: 2000,
+        pause: 5000,
         keyPress: false,
         controls: true,
         prevHtml: '',

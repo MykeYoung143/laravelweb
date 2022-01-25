@@ -52,6 +52,7 @@ class DashboardPostController extends Controller
             'slug' => 'required|unique:posts',
             'category_id' => 'required',
             'image' => 'image|file|max:5120',
+            'caption' => 'max:191',
             'links' => 'max:191',
             'body' => 'required'
         ]);
@@ -108,6 +109,7 @@ class DashboardPostController extends Controller
             'title' => 'required|max:191',
             'category_id' => 'required',
             'image' => 'image|file|max:5120',
+            'caption' => 'max:191',
             'links' => 'max:191',
             'body' => 'required'
         ];

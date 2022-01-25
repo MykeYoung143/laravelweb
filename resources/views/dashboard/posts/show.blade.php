@@ -24,9 +24,11 @@
                     <img src="https://source.unsplash.com/1200x400? {{ $post->category->name }}"
                     alt="{{ $post->category->name }}" class="img-fluid mt-3">
                 @endif
-                <article class="my-3 fs-5">
-                {!! $post->body !!}
-                </article>
+                @if ($post->caption !== NULL)
+                    <div class="caption">
+                        <p>© {{$post->caption}}<p>
+                    </div>
+                @endif
                 @if ($post->links !== NULL)
                     @if (strpos($post->links, 'youtube') !== false)
                         <?php
@@ -43,6 +45,10 @@
                     frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
                     </iframe>
                 @endif 
+                <article class="my-3 fs-5">
+                {!! $post->body !!}
+                </article>
+                
             </div>
         </div>
     </div>

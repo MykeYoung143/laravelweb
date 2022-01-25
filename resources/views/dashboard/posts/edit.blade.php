@@ -50,7 +50,6 @@
         @else
         <img class="img-preview img-fluid mb-3 col-sm-5">
         @endif
-
         <input class="form-control @error('image') is-invalid @enderror" type="file" id="image" name="image" onchange="previewImage()">
         @error('image')
         <div class="invalid-feedback">
@@ -58,6 +57,16 @@
         </div>
         @enderror
       </div>
+      <div class="mb-3">
+        <label for="caption" class="form-label">Enter Caption for Image</label>
+        <input type="text" class="form-control @error('caption') is-invalid @enderror" id="caption" name="caption" autofocus
+        value="{{ old('caption',$post->caption) }}">
+        @error('caption')
+        <div class="invalid-feedback">
+          {{ $message }}
+        </div>
+        @enderror
+        </div>
       <div class="mb-3">
         <label for="links" class="form-label">Enter Links(For previewable media, Youtube and Vimeo)</label>
         <input type="text" class="form-control @error('links') is-invalid @enderror" id="links" name="links" autofocus
@@ -70,7 +79,9 @@
         </div>
       <div class="mb-3">
         <label for="body" class="form-label">Body</label>
-        <textarea class="form-control" id="body" name="body" >{{ old('body', $post->body) }}</textarea>
+        <!-- <div id="toolbar-container"></div>
+        <div class="form-control" id="body" name="body" rows="10" col="50"><p>{{ old('body', $post->body) }}</p></div>-->
+         <textarea class="form-control" id="body" name="body" rows="10" col="50">{{ old('body', $post->body) }}</textarea> 
         @error('body')
           <p class="text-danger">{{ $message }}</p>
         @enderror
@@ -81,7 +92,20 @@
     </form>
 </div>
 
-<script src={{ asset('ckeditor/ckeditor.js') }}></script>
+<!-- <script src="https://cdn.ckeditor.com/ckeditor5/31.1.0/decoupled-document/ckeditor.js"></script>
+<script>
+    DecoupledEditor
+        .create( document.querySelector( '#body' ) )
+        .then( editor => {
+            const toolbarContainer = document.querySelector( '#toolbar-container' );
+
+            toolbarContainer.appendChild( editor.ui.view.toolbar.element );
+        } )
+        .catch( error => {
+            console.error( error );
+        } );
+</script> -->
+<script src={{ asset('/ckeditor/ckeditor.js') }}></script>
 <script>
     
     ClassicEditor
@@ -89,7 +113,7 @@
         .catch( error => {
             console.error( error );
         } );
-</script>
+</script> 
 <script>
     const title = document.querySelector('#title');
     const slug = document.querySelector('#slug');

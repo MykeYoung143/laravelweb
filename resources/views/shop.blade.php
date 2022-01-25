@@ -1,27 +1,29 @@
 @extends('layouts.main')
 
 @section('container')
-<section class="shop">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6">
-                <div class="text">
-                    <h2>Care for your pet</h2>
-                    <p>Fulfill your pet's needs with products from Miarao.com</p>
+  <section class="shop">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 offset-lg-1 col-md-12">
+                    <div class="text" data-aos="fade-up" data-aos-duration="2000">
+                        <h2>Pet for your life</h2>
+                        <p>Fullfill your pet's needs with products from miarao.com</p>
+                    </div>
+                    <div class="button" data-aos="fade-up" data-aos-duration="2000">
+                      <a href="https://malline.id/"><span class="btnName">
+                          Shop Now <i class="fas fa-long-arrow-alt-right"></i>
+                      </span></a>
+                      
+                  </div>
                 </div>
-                <div class="button">
-                    <p class="btnName">
-                        Shop Now
-                    </p>
-                    <img src="/Img/Shop/Arrow-Right.png" alt="" class="btnImage">
+                <div class="col-lg-5 offset-lg-1 col-md-12">
+                    <div class="shop-image" data-aos="fade-up" data-aos-duration="2000">
+                        <img src="/img/Shop/Page-Image.png" alt="">
+                    </div>
                 </div>
-            </div>
-            <div class="col-lg-5 offset-lg-1">
-                <div class="shop-image">
-                    <img src="/Img/Shop/Page-Image.png" alt="">
-                </div>
+                
             </div>
         </div>
-    </div>
-</section>
+    </section>
+
 @endsection

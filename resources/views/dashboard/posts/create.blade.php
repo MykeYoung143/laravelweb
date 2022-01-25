@@ -51,7 +51,17 @@
         @enderror
       </div>
       <div class="mb-3">
-        <label for="links" class="form-label">Enter Links(For previewable media, Youtube and Vimeo)</label>
+        <label for="caption" class="form-label">Enter Caption for Image</label>
+        <input type="text" class="form-control @error('caption') is-invalid @enderror" id="caption" name="caption" autofocus
+        value="{{ old('caption') }}">
+        @error('caption')
+        <div class="invalid-feedback">
+          {{ $message }}
+        </div>
+        @enderror
+        </div>
+      <div class="mb-3">
+        <label for="links" class="form-label">Enter Links(For Previewable Media, Youtube and Vimeo)</label>
         <input type="text" class="form-control @error('links') is-invalid @enderror" id="links" name="links" autofocus
         value="{{ old('links') }}">
         @error('links')
@@ -62,6 +72,8 @@
         </div>
       <div class="mb-3">
         <label for="body" class="form-label">Body</label>
+        <!-- <div id="toolbar-container"></div>
+        <div class="form-control" id="body" name="body" rows="10" col="50"><p>{{ old('body') }}</p></div> -->
         <textarea class="form-control" id="body" name="body" rows="10" col="50">{{ old('body') }}</textarea>
         @error('body')
           <p class="text-danger">{{ $message }}</p>
@@ -72,7 +84,20 @@
       <button type="submit" class="btn btn-primary">Create Post</button>
     </form>
 </div>
-<script src={{ asset('ckeditor/ckeditor.js') }}></script>
+<!-- <script src="https://cdn.ckeditor.com/ckeditor5/31.1.0/decoupled-document/ckeditor.js"></script>
+<script>
+    DecoupledEditor
+        .create( document.querySelector( '#body' ) )
+        .then( editor => {
+            const toolbarContainer = document.querySelector( '#toolbar-container' );
+
+            toolbarContainer.appendChild( editor.ui.view.toolbar.element );
+        } )
+        .catch( error => {
+            console.error( error );
+        } );
+</script> -->
+<script src={{ asset('/ckeditor/ckeditor.js') }}></script>
 <script>
     ClassicEditor
         .create( document.querySelector( '#body' ), )
