@@ -560,6 +560,18 @@ footer{
 .foot-item img{
   margin: auto;
 }
+.row-login {
+  min-height: 70vh;
+}
+.section-store-auth h2 {
+  font-weight: normal;
+  margin-top: 0;
+  font-size: 28px;
+  color: #0c0d36;
+}
+.page-content {
+  margin-top: 100px;
+}
  /* Featured Title responsive */
  @media (min-width:991px){
    .offset-lg-1{
