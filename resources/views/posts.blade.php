@@ -2,6 +2,64 @@
 
 @section('container')
 <!-- <h1 class="mb-3 text-center">{{ $title }}</h1> -->
+@if(request('search'))
+<section class="content">
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-md-12">
+      <div class="title" data-aos="fade-down">
+        <img src="/img/Starter/Lounge.svg" alt="">
+          <h1>Your Search Result</h1>
+      </div>
+		<div class="row">
+      @if ($posts->count())
+      @foreach ($posts->skip(0) as $post)
+		
+		<div class="card col-lg-12 col-md-5" data-aos="zoom-in">
+        <div class="card-image">
+        @if ($post->image)
+			
+          <img src="{{ asset('storage/' . $post->image) }}"
+          alt="{{ $post->category->name }}">
+        @else
+          <img src="/img/shiba.jpg" alt="{{ $post->category->name }}">
+			
+        @endif
+        </div>
+        <div class="card-content">
+          <a href="/posts?category={{ $post->category->slug }}" class="tags">{{ $post->category->name }}</a>
+          <a href="/posts/{{ $post->slug }}" class="link">
+            <h2 class="blog-title">{{ $post->title }}</h2>
+          <p class="synopsis">{{ $post->excerpt }}</p></a>
+                          
+            <div class="blog-details">
+              <div class="icon-text">
+                <span class="icon"><i class="fas fa-user"></i></span>
+                <a href="/posts?author={{ $post->author->username }}"><span class="text">
+                {{ $post->author->name }}
+                </span></a>
+              </div>
+
+              <div class="icon-text">
+                <span class="icon"><i class="fas fa-calendar-alt"></i></span>
+                <span class="text-2">{{ $post->created_at}}</span>
+              </div>
+
+              <div class="blog-action">
+                <button class="share-buttton"><i class="fas fa-bookmark"></i></button>   
+                <button class="more-button"><i class="fas fa-ellipsis-v"></i></button>   
+              </div>
+            </div>
+          </div>
+      </div>
+      @endforeach
+      @else
+      <p class="text-center fs-4">No post found.</p>
+      @endif
+	</div>
+</div>
+</section>
+@else
 <section class="features">
 	<div class="col-lg-12">
 		<div class="title" data-aos="fade-down">
@@ -12,7 +70,6 @@
 <div class="slider">
   <ul id="autoWidth" class="cs-hidden">
 	 
-		 
       @if ($posts->count())
       @foreach ($posts->skip(0) as $post)
 	  <li class="item-a" data-aos="zoom-in">
@@ -77,7 +134,7 @@
           <img src="{{ asset('storage/' . $post->image) }}"
           alt="{{ $post->category->name }}">
         @else
-          <img src="img/shiba.jpg" alt="{{ $post->category->name }}">
+          <img src="/img/shiba.jpg" alt="{{ $post->category->name }}">
 			
         @endif
         </div>
@@ -113,7 +170,6 @@
       @endif
 	</div>
 </div>
-
   
   <div class="col-lg-4 col-md-12">
     <div class="title-2" data-aos="fade-down">
@@ -137,9 +193,9 @@
   </div>
   </div>
 </section>
-
-<div class="d-flex justify-content-center">
+@endif
+<!-- <div class="d-flex justify-content-center">
 {{ $posts->links() }}
-</div> 
+</div>  -->
 
 @endsection

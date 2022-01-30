@@ -29,7 +29,7 @@ class PostController extends Controller
             "active" => 'posts',
             //"posts" => Post::all()
             //"posts" => Post::with(['author', 'category'])->latest()->get()  //eager-loading
-            "posts" => Post::latest()->filter(request(['search', 'category', 'author']))->paginate(7)->withQueryString()
+            "posts" => Post::latest()->filter(request(['search', 'category', 'author']))->paginate(100)->withQueryString()
         ]);
 
     }

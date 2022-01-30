@@ -53,7 +53,7 @@
         <div class="row align-items-center row-login">
           <div class="col-lg-6 text-center">
             <img
-              src="/img/login-placeholder.png"
+              src="/img/login.png"
               alt=""
               class="w-50 mb-4 mb-lg-none"
             />
@@ -90,12 +90,15 @@
                 <label for="password">Password</label>
                 <input type="password" name="password" class="form-control w-75" id="password" placeholder="Password" required>
               </div>
-              <button class="btn btn-primary btn-block w-75" type="submit"
+              <button class="btn btn-block w-75" type="submit"
                 >Sign In</button
               >
-              <a href="/register" class="btn btn-light btn-block w-75"
-                >Sign Up</a
+              <a href="/register" class="btn btn-block w-75" id="btn-2"
+                >Forget Password</a
               >
+				<hr>
+				 <a href="/register" class="btn btn-block w-75" id="btn-3"
+                >New user? Sign up Here</a>
             </form>
           </div>
         </div>

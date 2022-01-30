@@ -1,3 +1,4 @@
+<header class="sticky-top">
 <nav class="navbar navbar-expand-lg" data-aos="fade-down">
   <div class="container-fluid">
     <a class="navbar-brand" href="/"><img src="/img/Starter/Logo-Navi.svg" alt=""></a>
@@ -41,8 +42,9 @@
           @auth
 		<ul class="navbar-nav ms-auto">
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Welcome back, {{ auth()->user()->name }}
+				<div class="Profile">
+              <a class="dropdown" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                {{ auth()->user()->name }} <img src="/img/Starter/Icon-Nav.svg" alt="">
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="/dashboard"><i class="bi bi-layout-text-window-reverse"></i> My Dashboard</a></li>
@@ -56,15 +58,17 @@
                   </form>
                 </li>
               </ul>
+					</div>
             </li>
 			</ul>
           @else
             <div class="Profile">
-				<a href="#"><h4>Hooman</h4></a>
-				<a href="/login" class="{{ ($active === "login") ? 'active' : '' }}" style="border: none"><img src="/img/Blog/Icon-navigasi.svg" alt=""></a>
+				<a href="/login" class="{{ ($active === "login") ? 'active' : '' }}" style="border: none"><h4>Sign In</h4></a>
+				<a href="/login" class="{{ ($active === "login") ? 'active' : '' }}" style="border: none"><i class="fas fa-user"></i></a>
         </div>
           @endauth
       </div>
     </div>
   </div>
 </nav>
+</header>
