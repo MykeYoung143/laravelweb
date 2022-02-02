@@ -37,7 +37,7 @@ class PostController extends Controller
     public function show(Post $post)
     {
         //Sharing link
-        $shareComponent = Share::currentPage('MiaraO')
+        $shareComponent = Share::currentPage('Miarao')
         ->facebook()
         ->twitter()
         ->telegram()
