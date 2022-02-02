@@ -431,6 +431,22 @@ header.sticky{
   max-width: 569px;
   max-height: 146px;
 }
+.about-detail{
+  padding-top:70px ;
+}
+.about-detail h2{
+  font-size: 36px;
+  font-weight: 600;
+  font-style: normal;
+  color: #F15A2D;
+  padding-bottom: 15px;
+}
+.about-detail p{
+  font-size: 24px;
+  line-height: 40.8px;
+  font-weight: 500;
+  font-style: normal;
+}
 .team-title{
   padding-top: 100px;
   padding-bottom: 30px;
@@ -448,9 +464,9 @@ header.sticky{
   overflow: hidden;
 }
 .cards{
-  height: 450px;
-  max-width: 290px;
-  margin: 22px;
+  height: 250px;
+  width: 250px;
+  margin: 20px;
    box-shadow: 0px 0px 40px rgba(0, 0, 0, .1);
   border-radius: 10px;
   overflow: hidden;
@@ -469,9 +485,6 @@ header.sticky{
 .cards-img img{
   height: 120px;
   width: 120px;
-  border-radius: 50%;
-  border: 10px solid #F15A2D;
-
 }
 .cards-info h3{
   color: #F15A2D;
@@ -482,6 +495,7 @@ header.sticky{
 .cards-info span{
   font-size: 15px;
   color: #2D3F50;
+  font-weight: 600;
 }
 .cards-info p{
   font-size: 13px;
@@ -636,7 +650,6 @@ hr{
    }
    .About .text{
     padding-left: 72px;
-    margin-top: 50px;
    }
 
  }
@@ -652,7 +665,7 @@ hr{
      max-width: 1488px;
    }
    .containers .container{
-     max-width: 1388px;
+     max-width: 1500px;
      padding-left: 27px;
    }
  }
@@ -817,6 +830,10 @@ hr{
     .about-image img{
       margin-left: 40px;
     }
+	.about-detail{
+      padding-top:0px ;
+      text-align: center;
+    }
     .About .text{
       text-align: center;
     }
@@ -904,7 +921,9 @@ hr{
 	hr{
 	margin:5px auto;
 }
-	
+	.cards{
+    margin: 36px;
+  }
 	
 }
 
@@ -1129,6 +1148,14 @@ a.blank{
 }
 .About h2{
   font-size: 62px;
+  padding-top: 20px;
+}
+.About p{
+  font-size: 20px;
+line-height: 32.5px;
+}
+.about-detail p{
+  font-size: 20px;
 }
 .about-image img{
   max-width: 285px;
@@ -1138,6 +1165,9 @@ a.blank{
   width: 332px;
   padding-top: 50px;
  }
+.cards{
+  margin: 30px;
+}
  .page-content .section-store-auth .form-group{
 	text-align: -webkit-center;
 	 padding-top:10px;
@@ -1213,6 +1243,14 @@ a.blank{
   .foot-item img{
     width: 60px;
     margin: auto;
+  }
+.About p{
+    font-size: 18px;
+    line-height: 35.8px;
+    padding-bottom: 200px;
+  }
+  .cards{
+    margin: 35px;
   }
    
 }
