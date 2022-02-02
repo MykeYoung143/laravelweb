@@ -23,6 +23,11 @@ use App\Http\Controllers\SocialShareButtonsController;
 |
 */
 
+// manggil symbolic link, selalu pake kalau transfer hostingan 
+Route::get('/sym', function () {
+    Artisan::call('storage:link');
+});
+
 Route::get('/', [PostController::class, 'index'], function () {
     return view('posts', [
         "title" => "Home",
@@ -70,6 +75,9 @@ Route::get('/login', [LoginController::class, 'index'])->name('login')->middlewa
 Route::post('/login', [LoginController::class, 'authenticate']);
 
 Route::post('/logout', [LoginController::class, 'logout']);
+
+// Route::get('/forgot_password', [LoginController::class, 'forgot']);
+// Route::post('/forgot_password', [LoginController::class, 'password']);
 
 Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 

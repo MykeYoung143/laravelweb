@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 
 class LoginController extends Controller
 {
@@ -40,4 +41,21 @@ class LoginController extends Controller
 
         return redirect('/');
     }
+
+    public function forgot()
+    {
+        return view('login.forgot', [
+            'title' => 'Forgot Password',
+            'active' => 'forgot'
+        ]);
+    }
+
+    // public function password(Request $request)
+    // {
+    //     $user = User::whereEmail($request->$email)->first();
+
+    //     if(count($user) == 0){
+    //         return redirect()->back()->with(['error' => 'Email does not exists ']);
+    //     }
+    // }
 }
