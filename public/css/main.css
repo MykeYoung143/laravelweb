@@ -635,7 +635,9 @@ hr{
 .page-content .section-store-auth .form-group .form-control{
 	border-radius:10px;
 	}
-    
+.form-group{
+	padding-bottom:10px;
+}
  /* Featured Title responsive */
  @media (min-width:991px){
    .offset-lg-1{
@@ -659,13 +661,17 @@ hr{
   .container{
     max-width: 1248px;
   }
+  .containers .container{
+	max-width: 900px;
+  }
+	 
  }
  @media (min-width:1250px){
    .container{
      max-width: 1488px;
    }
    .containers .container{
-     max-width: 1500px;
+     max-width: 1207px;
      padding-left: 27px;
    }
  }
