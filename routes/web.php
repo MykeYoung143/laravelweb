@@ -10,6 +10,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardPostController;
 use App\Http\Controllers\SocialShareButtonsController;
+use App\Http\Controllers\AdminCategoryController;
 
 
 /*
@@ -85,14 +86,18 @@ Route::post('/register', [RegisterController::class, 'store']);
 
 Route::get('/dashboard', function() {
     return view('dashboard.index');
-})->middleware('auth');
+})->middleware('admin');
 
-Route::get('/dashboard/posts/checkSlug', [DashboardPostController::Class, 'checkSlug'])->middleware('auth');
+Route::get('/dashboard/posts/checkSlug', [DashboardPostController::Class, 'checkSlug'])->middleware('admin');
 
-Route::resource('/dashboard/posts', DashboardPostController::Class)->middleware('auth');
+Route::resource('/dashboard/posts', DashboardPostController::Class)->middleware('admin');
+
+Route::resource('dashboard/categories', AdminCategoryController::class)->except('show')
+->middleware('admin');
 
 // Social media share
 Route::get('/social-media-share', [SocialShareButtonsController::class,'ShareWidget']);
+
 
 /*  //tidak dipakai lagi, sudah ditangani query
 Route::get('/categories/{category:slug}', function(Category $category) {
