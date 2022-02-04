@@ -60,6 +60,7 @@
 </div>
 </section>
 @else
+	 <!-- Slider Card  -->
 <section class="features">
 	<div class="col-lg-12">
 		<div class="title" data-aos="fade-down">
@@ -84,6 +85,7 @@
                 <img src="img/shiba.jpg" alt="{{ $post->category->name }}" class="model">
               @endif
               <div class="overlay">
+				   <!-- Isi dari Card Slider -->
                 <div class="slide-details">
                   <h3 class="slide-title">
                     {{ $post->title }}
@@ -115,6 +117,7 @@
 	</div>
     </section>
 
+	 <!-- Lounge -->
 <section class="content">
 <div class="container">
   <div class="row">
@@ -127,7 +130,10 @@
       @if ($posts->count())
       @foreach ($posts->skip(0) as $post)
 		
+		 <!-- Blog Card -->
 		<div class="card col-lg-12 col-md-5" data-aos="zoom-in">
+			
+		 <!-- Blog Card Image -->
         <div class="card-image">
         @if ($post->image)
 			
@@ -138,6 +144,8 @@
 			
         @endif
         </div>
+			
+			 <!-- Isi Dari Card Blog -->
         <div class="card-content">
           <a href="/posts?category={{ $post->category->slug }}" class="tags">{{ $post->category->name }}</a>
           <a href="/posts/{{ $post->slug }}" class="link">
@@ -171,6 +179,9 @@
 	</div>
 </div>
   
+	  
+	  <!-- Topic -->
+	  
   <div class="col-lg-4 col-md-12">
     <div class="title-2" data-aos="fade-down">
       <h1>Topic</h1>
@@ -181,13 +192,6 @@
       <a href="/posts?category=virus" class="btn category" data-aos="zoom-in" data-aos-delay="600">Virus</a>
       <a href="/posts?category=kesehatan" class="btn category" data-aos="zoom-in" data-aos-delay="800">Kesehatan</a>
       <a href="/posts?category=pets" class="btn category" data-aos="zoom-in" data-aos-delay="1000">Pets</a>
-      <!-- <a href="#" class="btn category" data-aos="zoom-in" data-aos-delay="200">Technology</a>
-      <a href="#" class="btn category" data-aos="zoom-in" data-aos-delay="400">Pet</a>
-      <a href="#" class="btn category" data-aos="zoom-in" data-aos-delay="600">Hotel</a>
-      <a href="#" class="btn category" data-aos="zoom-in" data-aos-delay="800">Groom</a>
-      <a href="#" class="btn category" data-aos="zoom-in" data-aos-delay="1000">Adopt</a>
-      <a href="#" class="btn category" data-aos="zoom-in" data-aos-delay="1200">Vaccine</a>
-      <a href="#" class="btn category" data-aos="zoom-in" data-aos-delay="1400">Training</a>  -->
     </div>
   </div> 
   </div>

@@ -4,11 +4,13 @@
 <section class="About">
         <div class="container">
             <div class="row">
+				<!-- Gambar di kiri-->
                 <div class="col-lg-5 offset-lg-1 col-md-12" data-aos="fade-up" data-aos-duration="2000">
                     <div class="about-image">
                         <img src="/img/About/Mask Group.svg" alt="">
                     </div>
                 </div>
+				<!-- Tulisan di kanan-->
                 <div class="col-lg-6 col-md-12" data-aos="fade-up" data-aos-duration="2000">
                     <div class="text">
                         <h2>Miarao is</h2>
@@ -21,6 +23,7 @@
         </div>
 </section>
 
+<!-- Tulisan setelah section diatas-->
 <section class="about-detail">
         <div class="container">
             <div class="row">
@@ -49,17 +52,20 @@
         </div>
     </section>
 
-
+<!-- Card Team-->
 <h2 class="team-title" data-aos="fade-down">The Team</h2>
     <section class="containers">
         <div class="col-lg-12">
             <div class="container">
         <ul id="autoWidth" class="cs-hidden">
            <li class="item-a">
+			   <!-- Card-->
                 <div class="cards" data-aos="zoom-in">
+					<!-- Card Image-->
                     <div class="cards-img">
                         <img src="/img/team/cat.png" alt="">
                     </div>
+					<!-- Isi Card-->
                     <div class="cards-info">
                         <h3>Vina Pohan</h3>
                         <span>Inspirator</span>
@@ -67,10 +73,13 @@
                 </div>
             </li>
             <li class="item-b">
+				<!-- Card-->
                 <div class="cards" data-aos="zoom-in" data-aos-delay="200">
+					<!-- Card Image-->
                     <div class="cards-img">
                         <img src="/img/team/lion.png" alt="">
                     </div>
+					<!-- Isi Card-->
                     <div class="cards-info">
                         <h3>Samuel Berrit Olam</h3>
                         <span>Project Owner</span>
@@ -78,10 +87,13 @@
                 </div>
             </li>
             <li class="item-c">
+				<!-- Card-->
                 <div class="cards" data-aos="zoom-in" data-aos-delay="400">
+					<!-- Card Image-->
                     <div class="cards-img">
                         <img src="/img/team/dog.png" alt="">
                     </div>
+					<!-- Isi Card-->
                     <div class="cards-info">
                         <h3>Jake Carlo Warouw</h3>
                         <span>Co-owner</span>
@@ -89,10 +101,13 @@
                 </div>
             </li>
             <li class="item-d">
+				<!-- Card-->
                 <div class="cards" data-aos="zoom-in" data-aos-delay="600">
+					<!-- Card Image-->
                     <div class="cards-img">
                         <img src="/img/team/owl.png" alt="">
                     </div>
+					<!-- Isi Card-->
                     <div class="cards-info">
                         <h3>Evan Afrianus</h3>
                         <span>Social Media Creator</span>
@@ -100,10 +115,13 @@
                 </div>
             </li>
             <li class="item-e">
+				<!-- Card-->
                 <div class="cards" data-aos="zoom-in" data-aos-delay="800">
+					<!-- Card Image-->
                     <div class="cards-img">
                         <img src="/img/team/koala.png" alt="">
                     </div>
+					<!-- Isi Card-->
                     <div class="cards-info">
                         <h3>Rahadian Maulana</h3>
                         <span>UI/UX Designer</span>
@@ -111,10 +129,13 @@
                 </div>
             </li>
             <li class="item-f">
+				<!-- Card-->
                 <div class="cards" data-aos="zoom-in" data-aos-delay="800">
+					<!-- Card Image-->
                     <div class="cards-img">
                         <img src="/img/team/fox.png" alt="">
                     </div>
+					<!-- Isi Card-->
                     <div class="cards-info">
                         <h3>Dicky Haruman</h3>
                         <span>Front-End Developer</span>
@@ -122,10 +143,13 @@
                 </div>
             </li>
             <li class="item-g">
+				<!-- Card-->
                 <div class="cards" data-aos="zoom-in" data-aos-delay="800">
+					<!-- Card Image-->
                     <div class="cards-img">
                         <img src="/img/team/hen.png" alt="">
                     </div>
+					<!-- Isi Card-->
                     <div class="cards-info">
                         <h3>Michael Alex</h3>
                         <span>Back-End Developer</span>
