@@ -4,6 +4,7 @@
   <section class="shop">
         <div class="container">
             <div class="row">
+				<!-- Tulisan Sebelah Kiri-->
                 <div class="col-lg-5 offset-lg-1 col-md-12">
                     <div class="text" data-aos="fade-up" data-aos-duration="2000">
                         <h2>Pet for your life</h2>
@@ -16,6 +17,7 @@
                       
                   </div>
                 </div>
+				<!-- Gambar Sebelah Kanan-->
                 <div class="col-lg-5 offset-lg-1 col-md-12">
                     <div class="shop-image" data-aos="fade-up" data-aos-duration="2000">
                         <img src="/img/Shop/Page-Image.png" alt="">

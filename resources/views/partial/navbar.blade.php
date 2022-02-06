@@ -47,8 +47,10 @@
                 {{ auth()->user()->name }} <img src="/img/Starter/Icon-Nav.svg" alt="">
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                @can('admin')
                 <li><a class="dropdown-item" href="/dashboard"><i class="bi bi-layout-text-window-reverse"></i> My Dashboard</a></li>
                 <li><hr class="dropdown-divider"></li>
+                @endcan
                 <li>
                   <form action="/logout" method="post">
                       @csrf
