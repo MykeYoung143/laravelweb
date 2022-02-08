@@ -93,7 +93,7 @@
               <button class="btn btn-block w-75" type="submit"
                 >Sign In</button
               >
-              <a href="/register" class="btn btn-block w-75" id="btn-2"
+              <a href="/forgot_password" class="btn btn-block w-75" id="btn-2"
                 >Forget Password</a
               >
 				<hr>

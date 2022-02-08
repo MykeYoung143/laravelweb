@@ -77,8 +77,8 @@ Route::post('/login', [LoginController::class, 'authenticate']);
 
 Route::post('/logout', [LoginController::class, 'logout']);
 
-// Route::get('/forgot_password', [LoginController::class, 'forgot']);
-// Route::post('/forgot_password', [LoginController::class, 'password']);
+Route::get('/forgot_password', [LoginController::class, 'forgot']);
+Route::post('/forgot_password', [LoginController::class, 'password']);
 
 Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 
@@ -117,6 +117,6 @@ Route::get('/authors/{author:username}', function(User $author) {
     ]);
 }); */ 
 
-Auth::routes();
+//Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
