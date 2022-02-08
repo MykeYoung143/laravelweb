@@ -41,7 +41,17 @@
         </select>
       </div>
       <div class="mb-3">
-        <label for="image" class="form-label">Choose Image</label>
+        <label for="links" class="form-label">Enter Links(For Previewable Media, Youtube and Vimeo)</label>
+        <input type="text" class="form-control @error('links') is-invalid @enderror" id="links" name="links" autofocus
+        value="{{ old('links') }}">
+        @error('links')
+        <div class="invalid-feedback">
+          {{ $message }}
+        </div>
+        @enderror
+        </div>
+        <div class="mb-3">
+        <label for="image" class="form-label">Image Feature</label>
         <img class="img-preview img-fluid mb-3 col-sm-5">
         <input class="form-control @error('image') is-invalid @enderror" type="file" id="image" name="image" onchange="previewImage()">
         @error('image')
@@ -55,16 +65,6 @@
         <input type="text" class="form-control @error('caption') is-invalid @enderror" id="caption" name="caption" autofocus
         value="{{ old('caption') }}">
         @error('caption')
-        <div class="invalid-feedback">
-          {{ $message }}
-        </div>
-        @enderror
-        </div>
-      <div class="mb-3">
-        <label for="links" class="form-label">Enter Links(For Previewable Media, Youtube and Vimeo)</label>
-        <input type="text" class="form-control @error('links') is-invalid @enderror" id="links" name="links" autofocus
-        value="{{ old('links') }}">
-        @error('links')
         <div class="invalid-feedback">
           {{ $message }}
         </div>
