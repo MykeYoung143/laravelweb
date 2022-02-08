@@ -116,3 +116,7 @@ Route::get('/authors/{author:username}', function(User $author) {
         'posts' => $author->posts->load('category', 'author'),  //lazy eager-loading
     ]);
 }); */ 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

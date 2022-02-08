@@ -37,7 +37,7 @@
 
     
 
-    <title>Miarao | {{ $title }}</title>
+    <title>Miarao </title>
   </head>
 
   <body>
