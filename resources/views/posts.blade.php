@@ -66,7 +66,7 @@
     <div class="col-lg-8 col-md-12">
       <div class="title" data-aos="fade-down">
         <img src="/img/Starter/Lounge.svg" alt="">
-          <h1>From This Author</h1>
+          <h1>Results For This Author</h1>
       </div>
 		<div class="row">
       @if ($posts->count())
@@ -123,7 +123,7 @@
     <div class="col-lg-8 col-md-12">
       <div class="title" data-aos="fade-down">
         <img src="/img/Starter/Lounge.svg" alt="">
-          <h1>From This Topic</h1>
+          <h1>Results For This Topic</h1>
       </div>
 		<div class="row">
       @if ($posts->count())
