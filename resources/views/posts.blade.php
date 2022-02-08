@@ -59,6 +59,120 @@
 	</div>
 </div>
 </section>
+@elseif(request('author'))
+<section class="content">
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-md-12">
+      <div class="title" data-aos="fade-down">
+        <img src="/img/Starter/Lounge.svg" alt="">
+          <h1>From This Author</h1>
+      </div>
+		<div class="row">
+      @if ($posts->count())
+      @foreach ($posts->skip(0) as $post)
+		
+		<div class="card col-lg-12 col-md-5" data-aos="zoom-in">
+        <div class="card-image">
+        @if ($post->image)
+			
+          <img src="{{ asset('storage/' . $post->image) }}"
+          alt="{{ $post->category->name }}">
+        @else
+          <img src="/img/shiba.jpg" alt="{{ $post->category->name }}">
+			
+        @endif
+        </div>
+        <div class="card-content">
+          <a href="/posts?category={{ $post->category->slug }}" class="tags">{{ $post->category->name }}</a>
+          <a href="/posts/{{ $post->slug }}" class="link">
+            <h2 class="blog-title">{{ $post->title }}</h2>
+          <p class="synopsis">{{ $post->excerpt }}</p></a>
+                          
+            <div class="blog-details">
+              <div class="icon-text">
+                <span class="icon"><i class="fas fa-user"></i></span>
+                <a href="/posts?author={{ $post->author->username }}"><span class="text">
+                {{ $post->author->name }}
+                </span></a>
+              </div>
+
+              <div class="icon-text">
+                <span class="icon"><i class="fas fa-calendar-alt"></i></span>
+                <span class="text-2">{{ $post->created_at}}</span>
+              </div>
+
+              <div class="blog-action">
+                <button class="share-buttton"><i class="fas fa-bookmark"></i></button>   
+                <button class="more-button"><i class="fas fa-ellipsis-v"></i></button>   
+              </div>
+            </div>
+          </div>
+      </div>
+      @endforeach
+      @else
+      <p class="text-center fs-4">No post found.</p>
+      @endif
+	</div>
+</div>
+</section>
+@elseif(request('category'))
+<section class="content">
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-md-12">
+      <div class="title" data-aos="fade-down">
+        <img src="/img/Starter/Lounge.svg" alt="">
+          <h1>From This Topic</h1>
+      </div>
+		<div class="row">
+      @if ($posts->count())
+      @foreach ($posts->skip(0) as $post)
+		
+		<div class="card col-lg-12 col-md-5" data-aos="zoom-in">
+        <div class="card-image">
+        @if ($post->image)
+			
+          <img src="{{ asset('storage/' . $post->image) }}"
+          alt="{{ $post->category->name }}">
+        @else
+          <img src="/img/shiba.jpg" alt="{{ $post->category->name }}">
+			
+        @endif
+        </div>
+        <div class="card-content">
+          <a href="/posts?category={{ $post->category->slug }}" class="tags">{{ $post->category->name }}</a>
+          <a href="/posts/{{ $post->slug }}" class="link">
+            <h2 class="blog-title">{{ $post->title }}</h2>
+          <p class="synopsis">{{ $post->excerpt }}</p></a>
+                          
+            <div class="blog-details">
+              <div class="icon-text">
+                <span class="icon"><i class="fas fa-user"></i></span>
+                <a href="/posts?author={{ $post->author->username }}"><span class="text">
+                {{ $post->author->name }}
+                </span></a>
+              </div>
+
+              <div class="icon-text">
+                <span class="icon"><i class="fas fa-calendar-alt"></i></span>
+                <span class="text-2">{{ $post->created_at}}</span>
+              </div>
+
+              <div class="blog-action">
+                <button class="share-buttton"><i class="fas fa-bookmark"></i></button>   
+                <button class="more-button"><i class="fas fa-ellipsis-v"></i></button>   
+              </div>
+            </div>
+          </div>
+      </div>
+      @endforeach
+      @else
+      <p class="text-center fs-4">No post found.</p>
+      @endif
+	</div>
+</div>
+</section>
 @else
 	 <!-- Slider Card  -->
 <section class="features">

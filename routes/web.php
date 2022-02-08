@@ -117,6 +117,6 @@ Route::get('/authors/{author:username}', function(User $author) {
     ]);
 }); */ 
 
-//Auth::routes();
+Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
