@@ -24,9 +24,9 @@
                         <img src="{{ asset('storage/' . $post->image) }}"
                         alt="{{ $post->category->name }}" class="img-fluid mt-3">
                     </div>
-                @else
+                <!-- @else
                     <img src="https://source.unsplash.com/1200x400? {{ $post->category->name }}" 
-                    class="card-img-top mt-3" alt="{{ $post->category->name }}">
+                    class="card-img-top mt-3" alt="{{ $post->category->name }}"> -->
                 @endif
                 @if ($post->caption !== NULL)
                     <div class="caption">
