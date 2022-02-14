@@ -306,6 +306,9 @@
       <a href="/posts?category=virus" class="btn category" data-aos="zoom-in" data-aos-delay="600">Virus</a>
       <a href="/posts?category=kesehatan" class="btn category" data-aos="zoom-in" data-aos-delay="800">Kesehatan</a>
       <a href="/posts?category=pets" class="btn category" data-aos="zoom-in" data-aos-delay="1000">Pets</a>
+      <a href="/posts?category=recipe" class="btn category" data-aos="zoom-in" data-aos-delay="1200">Recipe</a>
+      <a href="/posts?category=activities" class="btn category" data-aos="zoom-in" data-aos-delay="1400">Activities</a>
+      <a href="/posts?category=shopping" class="btn category" data-aos="zoom-in" data-aos-delay="1600">Shopping</a>
     </div>
   </div> 
   </div>

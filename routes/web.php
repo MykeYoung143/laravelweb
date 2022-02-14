@@ -98,6 +98,12 @@ Route::resource('dashboard/categories', AdminCategoryController::class)->except(
 // Social media share
 Route::get('/social-media-share', [SocialShareButtonsController::class,'ShareWidget']);
 
+// comment
+Route::post('/comment/store', 'App\Http\Controllers\CommentController@store')->name('comment.add')
+->middleware('auth');
+Route::post('/reply/store', 'App\Http\Controllers\CommentController@replyStore')->name('reply.add')
+->middleware('auth');
+
 
 /*  //tidak dipakai lagi, sudah ditangani query
 Route::get('/categories/{category:slug}', function(Category $category) {

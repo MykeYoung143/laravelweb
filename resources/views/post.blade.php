@@ -24,9 +24,6 @@
                         <img src="{{ asset('storage/' . $post->image) }}"
                         alt="{{ $post->category->name }}" class="img-fluid mt-3">
                     </div>
-                <!-- @else
-                    <img src="https://source.unsplash.com/1200x400? {{ $post->category->name }}" 
-                    class="card-img-top mt-3" alt="{{ $post->category->name }}"> -->
                 @endif
                 @if ($post->caption !== NULL)
                     <div class="caption">
@@ -52,6 +49,28 @@
                 <article class="my-3 fs-5">
                 {!! $post->body !!}
                 </article>
+                
+                <!-- comment -->
+                <div class="card-body">
+                <h5>Display Comments</h5>
+            
+                @include('partial.replies', ['comments' => $post->comments, 'post_id' => $post->id])
+
+                <hr />
+               </div>
+               <div class="card-body">
+                <h5>Leave a comment</h5>
+                <form method="post" action="{{ route('comment.add') }}">
+                    @csrf
+                    <div class="form-group">
+                        <input type="text" name="comment" class="form-control" />
+                        <input type="hidden" name="post_id" value="{{ $post->id }}" />
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-sm btn-outline-danger py-0" style="font-size: 0.8em;" value="Add Comment" />
+                    </div>
+                </form>
+               </div>
             </div>
         </div>
     </div>
