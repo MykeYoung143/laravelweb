@@ -432,7 +432,7 @@ header.sticky{
   height: 250px;
   width: 250px;
   margin: 20px;
-   box-shadow: 0px 0px 40px rgba(0, 0, 0, .1);
+   box-shadow: 0px 0px 20px rgba(0, 0, 0, .1);
   border-radius: 10px;
   overflow: hidden;
   text-align: center;
@@ -606,6 +606,16 @@ hr{
 	}
 .form-group{
 	padding-bottom:10px;
+}
+ /* Comment Section */
+#replies{
+	background-color: #F15A2D;
+    border-radius: 10px;
+    margin-top: 10px;
+    color: white;
+}
+#comment-input{
+	border-radius:10px;
 }
  /* Featured Title + Bootstrap class Manipulation + About  responsive */
  @media (min-width:991px){

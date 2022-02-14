@@ -29,6 +29,7 @@
             </div> -->
 		<div class="swap">
       	<form action="/posts" class="d-flex">
+			<div class="searchbar">
         @if (request('category'))
           <input class="form-control me-2" type="hidden" name="category" value="{{ request('category') }}">
         @endif
@@ -36,7 +37,10 @@
           <input class="form-control me-2" type="hidden" name="author" value="{{ request('author') }}">
         @endif
               <input type="text" aria-label="Search" class="form-control me-2" placeholder="Search.." name="search" value="{{ request('search') }}">
-              <button class="btn" type="submit"><i class="fas fa-search"></i></button>
+              <div class="icon">
+                  <i class="fas fa-search"></i>
+				</div>
+              </div>
       </form>
         
           @auth
@@ -44,7 +48,7 @@
             <li class="nav-item dropdown">
 				<div class="Profile">
               <a class="dropdown" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                {{ auth()->user()->name }} <img src="/img/Starter/Icon-Nav.svg" alt="">
+                <h4>{{ auth()->user()->name }} <i class="fas fa-user"></i></h4> 
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 @can('admin')

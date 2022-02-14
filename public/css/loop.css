@@ -1,0 +1,58 @@
+
+.searchbar{
+  position: relative;
+}
+
+.searchbar input[type="text"]{
+  border: 0;
+  padding: 0;
+  width: 0px;
+  height: 35px;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.searchbar .icon{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 35px;
+  height: 100%;
+  background: none;
+  border-radius: 3px;
+  color: #F15A2D;
+  transition: all 0.5s 0.3s ease;
+}
+
+.searchbar .icon i{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  cursor: pointer;
+}
+
+
+.searchbar .icon.active{
+  background: #F15A2D;
+  transition: all 0.3s ease;
+  color: white;
+  border-radius: 15px;
+}
+
+.searchbar input[type="text"].active{
+  width: 250px;
+  padding: 0 10px;
+  transition: all 0.5s 0.2s ease;
+  border: 1px solid #F15A2D;
+  border-radius: 15px;
+}
+.searchbar input:focus{
+  outline: none;
+}
+
+@media screen and (max-width: 730px){
+  .searchbar .icon{
+    margin-right: -20px;
+  }
+}
